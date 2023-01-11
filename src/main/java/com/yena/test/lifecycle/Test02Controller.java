@@ -13,27 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.yena.test.lifecycle.model.Introduce;
 
 @RestController
-@RequestMapping("/lifecycle/test01")
-public class Test01RestController {
+public class Test02Controller {
 
-	@RequestMapping("/1")
-	public Map<String, Integer> mapResponse(){
-		// key : 과목, value : 성적
-		// 과목 : 성적
-		Map<String, Integer> scoreMap = new HashMap<>();
-		
-		scoreMap.put("국어", 80);
-		scoreMap.put("수학", 90);
-		scoreMap.put("영어", 85);
-		
-		return scoreMap;
-	}
-	
-	@RequestMapping("/2")
+	@RequestMapping("/lifecycle/test02/1")
 	public List<Map<String, Object>> listMapResponse(){
 		
 		List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
-		
+	
 		Map<String, Object> map1 = new HashMap<String, Object>();
 		map1.put("rate", 15);
 		map1.put("director", "봉준호");
@@ -70,8 +56,45 @@ public class Test01RestController {
 		listMap.add(map5);
 		
 		return listMap;
+	
 	}
 	
-	//@RequestMapping("/3")
-	//list, class를 설계해서 json 출력하는 메소드.
+	@RequestMapping("/lifecycle/test02/2")
+	public List<Introduce> listClass(){
+		
+		List<Introduce> list = new ArrayList<>();
+		
+		Introduce info = new Introduce();
+		info.setTitle("안녕하세요. 가입인사드립니다.");
+		info.setUser("halgulu");
+		info.setContent("안녕하세요. 가입했어요. 앞으로 잘부탁드립니다. 열심히 하겠습니다.");
+		list.add(info);
+		
+		info = new Introduce();
+		info.setTitle("헐 대박");
+		info.setUser("bada");
+		info.setContent("오늘 목요일이었어. 금요일인줄");
+		list.add(info);
+		
+		info = new Introduce();
+		info.setTitle("오늘 데이트 한 이야기 들려드릴게요");
+		info.setUser("dulumary");
+		info.setContent("....");
+		list.add(info);
+		
+		return list;
+	}
+	
+	@RequestMapping("/lifecycle/test02/3")
+	public ResponseEntity<Introduce> entityResponse(){
+		Introduce data = new Introduce();
+		
+		data.setTitle("안녕하세요. 가입인사드립니다.");
+		data.setUser("halgulu");
+		data.setContent("안녕하세요. 가입했어요. 앞으로 잘부탁드립니다. 열심히 하겠습니다.");
+	
+		ResponseEntity<Introduce> entity = new ResponseEntity(data, HttpStatus.INTERNAL_SERVER_ERROR);
+		return entity;
+	}
+	
 }
