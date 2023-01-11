@@ -4,6 +4,8 @@ public class Introduce {
 	private String title;
 	private String user;
 	private String content;
+	
+	//getters, setters
 	public String getTitle() {
 		return title;
 	}
