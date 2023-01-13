@@ -37,4 +37,44 @@ public class RealEstateController {
 		return realEstateList;
 	}
 	
+	
+	//넓이와 매매 가격을 전달받고, 이에 상응하는 리스트를 json으로 response에 담는다.
+	@ResponseBody
+	@RequestMapping("/3")
+	public List<RealEstate> realEstateByAreaPrice(
+			@RequestParam("area") int area 
+			,@RequestParam("price") int price) {
+		
+		return realEstateBO.getRealEstateListByAreaPrice(area, price);
+		 
+	}
+	
+//##################INSERT##########################
+	@ResponseBody
+	@RequestMapping("/4")
+	public String addRealEstate() {
+		
+		RealEstate addRealEstate = new RealEstate();
+		
+		addRealEstate.setRealtorId(3);
+		addRealEstate.setAddress("푸르지용 303동 1104호");
+		addRealEstate.setArea(89);
+		addRealEstate.setType("매매");
+		addRealEstate.setPrice(1000000);
+		addRealEstate.setRentPrice(0);
+		
+		int count = realEstateBO.addRealEstateByObject(addRealEstate);
+		
+		return "Test01 insert 결과 >> " + count;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping("/5")
+	public String newRealEstate(@RequestParam("realtorId") int realtorId) {
+		
+		int count = realEstateBO.newRealEstate(realtorId,"썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
+	
+		return "field로 insert >> " + count;
+	}
 }

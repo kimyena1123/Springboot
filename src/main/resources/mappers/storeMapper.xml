@@ -18,4 +18,5 @@
 			`updatedAt`
 		FROM `store`
 	</select>
+
 </mapper>
