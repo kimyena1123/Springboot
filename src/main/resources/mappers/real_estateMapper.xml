@@ -117,5 +117,14 @@
 			,now()
 		)
 	</insert>
+	
+	<update id="updateRealEstate"
+			parameterType="com.yena.test.mybatis.model.RealEstate">
+		UPDATE 
+			`real_estate`
+		SET type = #{type}
+			,price = #{price}
+		WHERE id = 30
+	</update>
   	
   </mapper>
