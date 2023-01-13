@@ -15,6 +15,7 @@ public class StoreBO {
 	//필요한 객체를 변수형태로 만들어준다.
 	private StoreDAO storeDAO;
 	
+	//store테이블의 데이터를 조회하고 리턴하는 메소드
 	public List<Store> getStoreList() {
 		//DAO가 list 형태 -> public List<Store> selectStoreList();
 

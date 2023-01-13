@@ -2,6 +2,7 @@ package com.yena.test.database.model;
 
 import java.util.Date;
 
+//데이터를 저장하기 위한 클래스
 public class Store {
 
 	private int id;
