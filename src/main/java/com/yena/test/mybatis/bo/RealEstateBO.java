@@ -48,4 +48,20 @@ public class RealEstateBO {
 		
 		return realEstateDAO.insertRealEstate(realtorId, address, area, type, price, rentPrice);
 	}
+	
+	//###########UPDATE##################
+	public int updateRealEstate(RealEstate realEstate) {
+		
+		return realEstateDAO.updateRealEstate(realEstate);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

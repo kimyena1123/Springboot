@@ -32,4 +32,8 @@ public interface RealEstateDAO {
 			,@Param("price") int price
 			,@Param("rentPrice") int rentPrice);
 	
+	//#################UPDATE#################
+	
+	public int updateRealEstate(RealEstate realEstate);
+	
 }

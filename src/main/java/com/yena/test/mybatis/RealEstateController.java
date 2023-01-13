@@ -77,4 +77,29 @@ public class RealEstateController {
 	
 		return "field로 insert >> " + count;
 	}
+	
+	//###############UPDATE###################
+	@ResponseBody
+	@RequestMapping("/6")
+	public String updateRealEstate() {
+		RealEstate updateRealEstate = new RealEstate();
+		
+		updateRealEstate.setType("전세");
+		updateRealEstate.setPrice(7000);
+		
+		int count = realEstateBO.updateRealEstate(updateRealEstate);
+		
+		return "업데이트 결과 >> " + count;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
