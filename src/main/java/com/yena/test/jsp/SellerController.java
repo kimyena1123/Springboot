@@ -21,17 +21,21 @@ public class SellerController {
 	
 	@GetMapping("/show")
 	public String showSeller(Model model, @RequestParam(value="id", required=false) Integer id) {
+	
+		Seller seller = null; //객체. 없으면 null.
 		
 		if(id == null) {			
-			Seller seller = sellerBO.getSeller();
+			seller = sellerBO.getSeller();
 			
-			model.addAttribute("seller", seller);
+			//model.addAttribute("seller", seller);
 			
 		}else {
-			Seller seller = sellerBO.getSellerById(id);
+			seller = sellerBO.getSellerById(id);
 			
-			model.addAttribute("seller", seller);
+			//model.addAttribute("seller", seller);
 		}
+		
+		model.addAttribute("seller", seller);
 
 		return "jsp/seller";
 	};
