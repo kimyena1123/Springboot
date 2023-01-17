@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yena.test.jsp.bo.SellerBO;
@@ -17,15 +18,40 @@ public class SellerController {
 	@Autowired
 	private SellerBO sellerBO;
 	
+	
 	@GetMapping("/show")
-	public String showSeller(Model model) {
+	public String showSeller(Model model, @RequestParam(value="id", required=false) Integer id) {
+	
+//		Seller seller = null; //객체. 없으면 null.
 		
-		Seller seller = sellerBO.getSeller();
+//		if(id == null) {			
+//			seller = sellerBO.getLastSeller();
+//			
+//			//model.addAttribute("seller", seller);
+//			
+//		}else {
+//			seller = sellerBO.getSellerById(id);
+//			
+//			//model.addAttribute("seller", seller);
+//		}
+		
+		Seller seller = sellerBO.getSeller(id);
 		
 		model.addAttribute("seller", seller);
-		
+
 		return "jsp/seller";
 	};
+	
+//	@GetMapping("/show/id")
+//	public String sellerById(Model model, @RequestParam("id") int id) {
+//		 
+//		Seller seller = sellerBO.getSellerById(id);
+//		
+//		model.addAttribute("seller", seller);
+//		
+//		return "jsp/seller";
+//	}
+	
 	
 	@ResponseBody
 	@GetMapping("/create")
