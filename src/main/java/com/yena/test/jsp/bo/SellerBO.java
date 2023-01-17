@@ -12,10 +12,18 @@ public class SellerBO {
 	@Autowired
 	private SellerDAO sellerDAO;
 
+	//마지막 id만 보여준다.
 	public Seller getSeller() {
 		
 		return sellerDAO.selectSeller();
 	};
+	
+	//id를 파라미터로 받아 보여준다
+	public Seller getSellerById(int id) {
+		
+		return sellerDAO.selectSellerById(id);
+	}
+
 	
 	public int createSeller(
 			String nickname
