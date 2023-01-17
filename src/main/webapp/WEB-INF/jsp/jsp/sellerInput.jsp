@@ -15,7 +15,7 @@
 		<input type = "text" name = "nickname"><br />
 		
 		<label>프로필 사진 url</label><br />
-		<input type = "text" name = "profileImg"><br />
+		<input type = "text" name = "profileImgae"><br />
 		
 		<label>온도</label><br />
 		<input type = "text" name ="temperature"><br />

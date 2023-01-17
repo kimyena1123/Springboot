@@ -5,22 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>seller table select</title>
+<style>
+	*{
+		magin: 0;
+		padding: 0;
+	}
+	img{
+		width: 200px;
+		height: 200px;
+	}
+</style>
 </head>
 <body>
-	
-	<table border = "1">
+	<table>
 		<tr>
-			<th>닉네임</th>
+			<td><h2>판매자 정보</h2></td>
+		</tr>
+		<tr>
+			<td><img src ="${seller. profileImgae}"></td>
+		</tr>
+		<tr>
 			<td>${ seller.nickname }</td>
 		</tr>
 		<tr>
-			<th>온도</th>
 			<td>${ seller.temperature }</td>
 		</tr>
-		<tr>
-			<th>프로필 이미지 주소</th>
-			<td>${ seller.profileImgae }</td>
-		</tr>
 	</table>
+
 </body>
 </html>
