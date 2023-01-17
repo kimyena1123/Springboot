@@ -37,24 +37,31 @@ public class RealEstateBO {
 		return realEstateDAO.selectRealEstateListByAreaPrice(area, price);
 	}
 	
-	//##################INSERT##############################
+	//####################INSERT##############################
 	public int addRealEstateByObject(RealEstate realEstate) {
 		
 		return realEstateDAO.insertRealEstateByObject(realEstate);
 	}
 	
-	
+	//매개변수: 다 전달받아야 함
 	public int newRealEstate(int realtorId, String address, int area, String type, int price, int rentPrice) {
 		
 		return realEstateDAO.insertRealEstate(realtorId, address, area, type, price, rentPrice);
 	}
 	
-	//###########UPDATE##################
-	public int updateRealEstate(RealEstate realEstate) {
+	//####################UPDATE##################
+	//변경할 대상 id, 변강할 type, 변경할 price
+	public int updateRealEstate(int id, String type, int price) {
 		
-		return realEstateDAO.updateRealEstate(realEstate);
+		return realEstateDAO.updateRealEstate(id, type, price);
 	}
 	
+	//##################DELETE#######################
+	
+	//몇 행이 삭제되었는지 return해주기에 return 타입이 int
+	public int destroyRealEstate(int id) {
+		return realEstateDAO.destroyRealEstate(id);
+	}
 	
 	
 	

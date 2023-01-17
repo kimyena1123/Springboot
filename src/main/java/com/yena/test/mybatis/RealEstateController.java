@@ -78,22 +78,29 @@ public class RealEstateController {
 		return "field로 insert >> " + count;
 	}
 	
+	
+	
 	//###############UPDATE###################
 	@ResponseBody
 	@RequestMapping("/6")
 	public String updateRealEstate() {
-		RealEstate updateRealEstate = new RealEstate();
 		
-		updateRealEstate.setType("전세");
-		updateRealEstate.setPrice(7000);
+		//id가 20인 매물의 타입을 "전세", price를 11112
+		int count = realEstateBO.updateRealEstate(20, "전세", 11112);
 		
-		int count = realEstateBO.updateRealEstate(updateRealEstate);
-		
-		return "업데이트 결과 >> " + count;
+		return "update 완료!>> " + count;
 	}
 	
+	//###############DELETE#######################
 	
-	
+	@ResponseBody
+	@RequestMapping("/7")
+	public String destroyRealEstate(@RequestParam("id") int id) {
+		
+		int count = realEstateBO.destroyRealEstate(id);
+		
+		return "delete 완료! >> " + count;
+	}
 	
 	
 	

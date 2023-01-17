@@ -91,7 +91,7 @@
 	</insert>
 	
 	<insert id="insertRealEstate"
-			parameterType="com.yena.test.mybatis.model.RealEstate">
+			parameterType="map">
 		
 		INSERT INTO
 			`real_estate`
@@ -119,12 +119,21 @@
 	</insert>
 	
 	<update id="updateRealEstate"
-			parameterType="com.yena.test.mybatis.model.RealEstate">
+			parameterType="map">
 		UPDATE 
 			`real_estate`
 		SET type = #{type}
-			,price = #{price}
-		WHERE id = 30
+			,price = #{price},
+			`updatedAt` = now()
+		WHERE id = #{id}
 	</update>
+	
+	<delete id="destroyRealEstate"
+			parameterType="int">
+		DELETE FROM
+			`real_estate`
+		WHERE
+			`id` = #{id}
+	</delete>
   	
   </mapper>
