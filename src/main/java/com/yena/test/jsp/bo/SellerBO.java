@@ -11,11 +11,19 @@ public class SellerBO {
 	
 	@Autowired
 	private SellerDAO sellerDAO;
+	
+	public Seller getSeller(Integer id) {
+		if(id == null) {
+			return sellerDAO.selectLastSeller();
+		}else {
+			return sellerDAO.selectSellerById(id);
+		}
+	}
 
 	//마지막 id만 보여준다.
-	public Seller getSeller() {
+	public Seller getLastSeller() {
 		
-		return sellerDAO.selectSeller();
+		return sellerDAO.selectLastSeller();
 	};
 	
 	//id를 파라미터로 받아 보여준다

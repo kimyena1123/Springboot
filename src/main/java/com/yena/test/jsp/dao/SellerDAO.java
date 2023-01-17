@@ -8,7 +8,7 @@ import com.yena.test.jsp.model.Seller;
 @Repository
 public interface SellerDAO {
 
-	public Seller selectSeller(); // 한 행만.
+	public Seller selectLastSeller(); // 한 행만.
 	public Seller selectSellerById(@Param("id") int id);
 	
 	public int insertSeller(

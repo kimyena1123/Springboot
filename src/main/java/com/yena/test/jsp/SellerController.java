@@ -22,18 +22,20 @@ public class SellerController {
 	@GetMapping("/show")
 	public String showSeller(Model model, @RequestParam(value="id", required=false) Integer id) {
 	
-		Seller seller = null; //객체. 없으면 null.
+//		Seller seller = null; //객체. 없으면 null.
 		
-		if(id == null) {			
-			seller = sellerBO.getSeller();
-			
-			//model.addAttribute("seller", seller);
-			
-		}else {
-			seller = sellerBO.getSellerById(id);
-			
-			//model.addAttribute("seller", seller);
-		}
+//		if(id == null) {			
+//			seller = sellerBO.getLastSeller();
+//			
+//			//model.addAttribute("seller", seller);
+//			
+//		}else {
+//			seller = sellerBO.getSellerById(id);
+//			
+//			//model.addAttribute("seller", seller);
+//		}
+		
+		Seller seller = sellerBO.getSeller(id);
 		
 		model.addAttribute("seller", seller);
 
