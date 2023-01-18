@@ -33,6 +33,7 @@ public class RealtorController {
 		
 		realtorBO.addRealtorByObject(realtor);
 		
+		//model을 통해 realtor.jsp에서 ${realtor.~}을 쓸 수 있는 거임.
 		model.addAttribute("realtor", realtor);
 		
 		return "jsp/realtor";
