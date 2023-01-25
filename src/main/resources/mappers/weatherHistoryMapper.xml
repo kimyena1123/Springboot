@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.yena.test.jstl.dao.WeatherHistoryDAO">
+  	<select id="ReadWeatherHistory"
+  			resultType="com.yena.test.jstl.model.WeatherHistory">
+  		SELECT
+  			`id`
+  			,`date`
+  			,`weather`
+  			,`temperatures`
+  			,`precipitaion`
+  			,`microDust`
+  			,`windSpeed`
+  			,`createdAt`
+  			,`updatedAt`
+  		FROM `weatherhistory`
+  	</select>
+  	
+  	<insert id="createWeatherHistory"
+  			parameterType="com.yena.test.jstl.model.WeatherHistory">
+  		INSERT INTO
+  			`weatherhistory`
+  		(
+  			`date`
+  			,`weather`
+  			,`temperatures`
+  			,`precipitaion`
+  			,`microDust`
+  			,`windSpeed`
+  			,`createdAt`
+  			,`updatedAt`
+  		)
+  		VALUE
+  		(
+  			#{date}
+  			,#{weather}
+  			,#{temperatures}
+  			,#{precipitaion}
+  			,#{microDust}
+  			,#{windSpeed}
+  			,now()
+  			,now()
+  		)
+  		
+  	</insert>
+  	
+  </mapper>
