@@ -94,7 +94,21 @@
 			<c:forEach var="info" items="${weather }">
 				<tr>
 					<td>${info.date }</td>
-					<td>${info.weather }</td>
+					<c:choose>
+						<c:when test="${info.weather == '맑음' }">
+							<td><img src="http://marondal.com/material/images/dulumary/web/jstl/sunny.jpg"></td>
+						</c:when>
+						<c:when test="${info.weather == '구름조금' }">
+							<td><img src=" http://marondal.com/material/images/dulumary/web/jstl/partlyCloudy.jpg"></td>
+						</c:when>
+						<c:when test="${info.weather == '흐림' }">
+							<td><img src="http://marondal.com/material/images/dulumary/web/jstl/cloudy.jpg"></td>
+						</c:when>
+						<c:otherwise>
+							<td><img src="http://marondal.com/material/images/dulumary/web/jstl/rainy.jpg"></td>
+						</c:otherwise>
+					</c:choose>
+					
 					<td>${info.temperatures }°C</td>
 					<td>${info.precipitaion }mm</td>
 					<td>${info.microDust }</td>
