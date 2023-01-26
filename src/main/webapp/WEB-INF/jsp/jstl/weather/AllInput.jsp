@@ -10,6 +10,7 @@
 <body>
 
 	<div class="container2">
+
 	<jsp:include page="AllAside.jsp" />
 	
 		<div class="input">
@@ -34,42 +35,22 @@
 					<option value="좋음">좋음</option>
 					<option value="좋음">보통</option>
 					<option value="나쁨">나쁨</option>
-				</select>
-				
+				</select
+
 				<br>
-				
+
 				<label>기온</label>
 				<input type="text" name="temperatures">
-				
+
 				<label>강수량</label>
 				<input type="text" name="precipitaion">
-				
+
 				<label>풍속</label>
 				<input type="text" name="windSpeed">
 				<br>
-				
 				<button type="submit">저장</button>
 			</form>
 		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </body>
 </html>

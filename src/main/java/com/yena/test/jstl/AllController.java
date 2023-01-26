@@ -23,15 +23,18 @@ public class AllController {
 	public String ReadWeatherHistory(Model model){
 		List<WeatherHistory> weatherList = weatherHistoryBO.getWeatherHistory();
 		
-		
 		model.addAttribute("weather", weatherList);
+    
 		return "/jstl/weather/all";
+
 	}
 	
 	//input 화면 보여주기
 	@GetMapping("/input")
 	public String weatherInput() {
+
 		return "/jstl/weather/AllInput";
+
 	}
 	
 	@GetMapping("/create")
@@ -58,7 +61,8 @@ public class AllController {
 		List<WeatherHistory> weatherList = weatherHistoryBO.getWeatherHistory();
 		model.addAttribute("weather", weatherList);
 		
-		return "/jstl/weahter/all";
+		return "jstl/weather/all";
+
 	}
 	
 	//CREATE (insert) 두번째 방식
