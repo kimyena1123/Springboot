@@ -14,7 +14,7 @@ public class WeatherHistoryBO {
 	@Autowired
 	private WeatherHistoryDAO weatherHistoryDAO;
 
-	//READ (select)
+	//READ (select) - 모든 데이터 조회
 	public List<WeatherHistory> getWeatherHistory(){
 		List<WeatherHistory> weather = weatherHistoryDAO.ReadWeatherHistory();
 		
