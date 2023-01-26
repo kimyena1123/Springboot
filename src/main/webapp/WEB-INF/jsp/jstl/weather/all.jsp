@@ -7,14 +7,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<title>종합문제1</title>
 <link rel="stylesheet" href="/jstl/weather/weather.css" type="text/css">
+
 </head>
 <body>
 	<div class = "container">
 		<jsp:include page="AllAside.jsp" />
 		
-
 		<div class="content">
 		<h2>과거 날씨</h2>
 		<table>
