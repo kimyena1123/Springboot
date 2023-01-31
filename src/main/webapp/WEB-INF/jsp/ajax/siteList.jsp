@@ -34,11 +34,10 @@
 		<tbody>
 		<c:forEach var="site" items="${siteList }" varStatus="status">
 			<tr>
-				<td class="siteId">${site.id }</td>
 				<td>${status.count}</td>
 				<td>${site.name }</td>
 				<td>${site.url }</td>
-				<td><button type="button" class="delBtn">삭제${status.count }</button></td>
+				<td><button type="button" class="delBtn" data-site-name="${site.id }">삭제${status.count }</button></td>
 			</tr>
 			</c:forEach>
 		</tbody>
@@ -54,17 +53,25 @@
 			//id는 하나만 관리하기 위한 것이기 때문에 id로 접근하면 안되고
 			//class로 선언해야 모든 삭제 버튼에 접근 가능하다.
 			$(".delBtn").on("click", function(){
-				//let siteId = $("td:first").text();
-				 
-				//let siteId = $(".siteId").text();
-
-			
+				
+				var siteId = $(this).data("siteName");
 				
 				$.ajax({
-					type:"get",
+					type:"post",
 					url: "/ajax/site/deleteById",
 					data:{
-						"id": siteId
+						"id": siteId,
+					},
+					success:function(res){
+						if(res.result){
+							location.href="/ajax/site/list";
+						}
+						else{
+							alert("삭제가 안되었습니다.");
+						}
+					},
+					error:function(err){
+						alert('error');
 					}
 				})
 			})
