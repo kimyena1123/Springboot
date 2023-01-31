@@ -32,9 +32,9 @@ public class SiteBO {
 		
 		//count가 0이면 중복 없음
 		if(count == 0) {
-			return false;
+			return false; // 중복 아님
 		}else {
-			return true;
+			return true; // 중복임
 		}
 	}
 	

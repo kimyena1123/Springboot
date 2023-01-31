@@ -64,15 +64,15 @@ public class SiteController {
 	@GetMapping("/checkUrl")
 	public Map<String, Boolean> checkUrl(@RequestParam("url") String url){
 		
-		Map<String, Boolean> result = new HashMap<>();
+		Map<String, Boolean> check = new HashMap<>();
 		
-		if(siteBO.checkUrl(url)) {
-			result.put("check", true);
-		}else {
-			result.put("check", false);
+		if(siteBO.checkUrl(url)) { // 중복임
+			check.put("check", true);
+		}else { // 중복 아님
+			check.put("check", false);
 		}
 		
-		return result;
+		return check;
 	}
 	
 	//삭제버튼

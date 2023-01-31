@@ -17,7 +17,15 @@
 	th, td{
 		border-bottom: 1px solid black;
 	}
-	
+	.delBtn{
+		width: 45px;
+		height: 26PX;
+		background-color: red;
+		color: white;
+		border: none;
+		font-size: 12px;
+		font-weight: 600;
+	}
 </style>
 </head>
 <body>
@@ -25,10 +33,10 @@
 	<table>
 		<thead>
 			<tr>
-				<th>id</th>
 				<th>No.</th>
 				<th>이름</th>
 				<th>주소</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,7 +45,7 @@
 				<td>${status.count}</td>
 				<td>${site.name }</td>
 				<td>${site.url }</td>
-				<td><button type="button" class="delBtn" data-site-name="${site.id }">삭제${status.count }</button></td>
+				<td><button type="button" class="delBtn" data-site-name="${site.id }">삭제</button></td>
 			</tr>
 			</c:forEach>
 		</tbody>
@@ -64,7 +72,8 @@
 					},
 					success:function(res){
 						if(res.result){
-							location.href="/ajax/site/list";
+							//성공하면 새로고침
+							location.reload();
 						}
 						else{
 							alert("삭제가 안되었습니다.");
