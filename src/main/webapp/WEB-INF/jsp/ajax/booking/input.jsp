@@ -52,6 +52,17 @@
 						alert("내용을 입력해주세요");
 						return;
 					}
+					//day와 headcount가 숫자가 아닌 경우 유효성 검사
+					//isNaN : not a Number
+					//숫자가 아니면 true (헷갈리지 말기)
+					if(isNaN(day)){
+						alert("숙박일수를 숫자로 표현해주세요");
+						return;
+					}
+					if(ksNaN(headcount)){
+						alert("인원수를 숫자로 표현해주세요");
+						return;
+					}
 					
 					$.ajax({
 						type: "get",
