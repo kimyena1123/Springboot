@@ -87,27 +87,32 @@
     				success:function(res){
     					console.log('res 확인 >> ', res);
     					console.log('res[0] 확인 >> ', res[0]);
-    					console.log('res[0].id >> ', res[0].id);
-    					console.log('res[0].name >> ', res[0].name);
-    			
-    					let name = res[0].name;
-    					let date = res[0].date;
-    					let day = res[0].day;
-    					let headcount = res[0].headcount;
-    					let state = res[0].state;
-    					
-    					alert('이름: '+name+
-    						  '\n날짜: '+date+
-    						  '\n일수: '+day+
-    						  '\n인원: '+headcount+
-    						  '\n상태: '+state);
-    				},
+    				
+    					if(res[0] == undefined){
+    						alert("조회 결과가 없습니다.");
+    					}else{
+    						console.log('res[0].id >> ', res[0].id);
+        					console.log('res[0].name >> ', res[0].name);
+        					
+        					let name = res[0].name;
+        					let date = res[0].date;
+        					let day = res[0].day;
+        					let headcount = res[0].headcount;
+        					let state = res[0].state;
+        					
+    						alert('이름: '+name+
+    	    						  '\n날짜: '+date+
+    	    						  '\n일수: '+day+
+    	    						  '\n인원: '+headcount+
+    	    						  '\n상태: '+state);
+    					}//else end
+    				}, //success end
     				error:function(err){
     					alert('조회 error');
-    				}
-    			})
-    		})
-    	})
+    				}//error end
+    			}) //ajax end
+    		}) //DivBtn end
+    	}) // jquery end
     
     
     
