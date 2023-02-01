@@ -94,12 +94,12 @@ public class BookingController {
 	//select * from `booking` where name = #{name} AND phoneNumber = #{phoneNumber} LIMIT 1
 	@ResponseBody
 	@PostMapping("/reservatoinCheck")
-	public List<Booking> checkByNameNumber(
+	public Booking checkByNameNumber(
 			@RequestParam("name") String name
 			,@RequestParam("phoneNumber") String phoneNumber
 			,Model model){
 		
-		List<Booking> info = bookingBO.checkByNameNumber(name, phoneNumber);
+		Booking info = bookingBO.checkByNameNumber(name, phoneNumber);
 		
 		
 		return info;

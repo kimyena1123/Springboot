@@ -90,23 +90,35 @@
     				},
     				success:function(res){
     					console.log('res 확인 >> ', res);
-    					console.log('res[0] 확인 >> ', res[0]);
+    					//console.log('res[0] 확인 >> ', res[0]);
     				
-    					if(res[0] == undefined){
+    					//Booking 클래스만이라면 조회결과가 없을 때 빈값
+    					//List<Booking>처럼 리스트 형식이라면 res[0] == "undefined"
+    					if(res == ""){
     						alert("조회 결과가 없습니다.");
     						return;
     					}
     					
     					//굳이 else문 없이 표현가능
     					//위에서 return으로 끝내주기 때문이다.
-   						console.log('res[0].id >> ', res[0].id);
-       					console.log('res[0].name >> ', res[0].name);
+    					
+    					//List<Booking>인 경우에 res[0]으로!
+   						//console.log('res[0].id >> ', res[0].id);
+       					//console.log('res[0].name >> ', res[0].name);
+       					console.log('res.id', res.id);
+       					console.log('res.name', res.name);
        					
-       					let name = res[0].name;
+       					/*let name = res[0].name;
        					let date = res[0].date;
        					let day = res[0].day;
        					let headcount = res[0].headcount;
-       					let state = res[0].state;
+       					let state = res[0].state;*/
+       					
+       					let name = res.name;
+       					let date = res.date;
+       					let day = res.day;
+       					let headcount = res.headcount;
+       					let state = res.state;
        					
    						alert('이름: '+name+
    	    						  '\n날짜: '+date+

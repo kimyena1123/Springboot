@@ -49,9 +49,9 @@ public class BookingBO {
 	}
 	
 	//main창에서 예약 정보 조회
-	public List<Booking> checkByNameNumber(String name, String phoneNumber) {
+	public Booking checkByNameNumber(String name, String phoneNumber) {
 		
-		List<Booking> booking = bookingDAO.checkByNameNumber(name, phoneNumber);
+		Booking booking = bookingDAO.checkByNameNumber(name, phoneNumber);
 		return booking;
 	}
 	
