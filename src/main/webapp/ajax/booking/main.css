@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 7%;
+    background: rgb(232, 173, 63);
+    display: flex;
+    align-items: center;
+}
+nav{
+    width: 100%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+nav ul li{
+    color: white;
+    font-weight: 600;
+}
+#bigImg{
+    width: 100%;
+    height: 53%;
+}
+#bigImg img{
+    width: 100%;
+    height: 100%;
+}
+#contents{
+    width: 100%;
+    height: 30%;
+    background-color:aquamarine;
+    display: flex;
+}
+#Div1{
+    width: 30%;
+    height: 100%;
+    background-color:#A1522C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#reservation1, #reservation2{
+    color: white;
+    font-size: 35px;
+}
+#Div2{
+    width: 40%;
+    height: 100%;
+    background-color: #D16A1E;
+}
+#checkReservation{
+    display: flex;
+    align-items: end;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#title{
+    font-size: 25px;
+    color: white;
+    margin: 0 30px;
+    margin-top: 10px;
+}
+label{
+    color: white;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+#user_info{
+    display: flex;
+    flex-direction: column;
+}
+#inputTags{
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#labelName{
+    display: flex;
+    flex-direction: column;
+}
+#trueLogin1{
+    display: flex;
+    flex-direction: column;
+}
+#falseLogin1{
+    display: flex;
+    flex-direction: column;
+}
+#inputs{
+    display: flex;
+    flex-direction: column;
+}
+#trueLogin2{
+    display: flex;
+    flex-direction: column;
+}
+#falseLogin2{
+    display: flex;
+    flex-direction: column;
+}
+#inputs input{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 120px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#btn{
+    display: flex;
+    justify-content: end;
+    margin-right: 110px;
+}
+#btn button{
+	margin-top: 15px;
+    padding: 4px 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+}
+#Div3{
+    width: 30%;
+    height: 100%;
+    background-color: #A1522C;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+}
+
+footer{
+    width: 100%;
+    height: 10%;
+    background-color:green;
+}
+
+.check{
+	width: 70%;
+	margin: 0 auto;
+}
+.check .name{
+	margin-left: 30px;
+}
+.check input {
+	width: 300px;
+	height: 36px;
+	margin: 8px 0;
+}
+.phoneText{
+	width: 60%;
+	color: white;
+	font-size: 42px;
+}
