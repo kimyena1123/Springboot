@@ -64,7 +64,11 @@
         </div>
     
         <footer>
-    
+    		<div class="infoSite">
+				제주특별자치도 제주시 애월읍 <br/>
+				사업자등록번호: 111-22-258222/농어촌민박사업자지정/대표:000 <br/>
+				Copyright 2025 tongnamu All right reserved<br/>
+	</div>
         </footer>
     </div>
     
@@ -86,28 +90,70 @@
     				},
     				success:function(res){
     					console.log('res 확인 >> ', res);
-    					console.log('res[0] 확인 >> ', res[0]);
-    					console.log('res[0].id >> ', res[0].id);
-    					console.log('res[0].name >> ', res[0].name);
-    			
-    					let name = res[0].name;
-    					let date = res[0].date;
-    					let day = res[0].day;
-    					let headcount = res[0].headcount;
-    					let state = res[0].state;
+    					console.log('res.result 확인 >> ', res.result);
+    					console.log('res.info 확인 >> ', res.info);
+    					//console.log('res.info.name >> ', res.info.name);
     					
-    					alert('이름: '+name+
-    						  '\n날짜: '+date+
-    						  '\n일수: '+day+
-    						  '\n인원: '+headcount+
-    						  '\n상태: '+state);
-    				},
+   					if(!res.result){
+    						alert("조회 결과가 없습니다.");
+    						return;
+    					}
+    					
+    					let name = res.info.name;
+       					let date = res.info.date;
+       					let day = res.info.day;
+       					let headcount = res.info.headcount;
+       					let state = res.info.state;
+       					
+   						alert('이름: '+name+
+   	    						  '\n날짜: '+date+
+   	    						  '\n일수: '+day+
+   	    						  '\n인원: '+headcount+
+   	    						  '\n상태: '+state);
+    					
+    					/*console.log('res 확인 >> ', res);
+    					//console.log('res[0] 확인 >> ', res[0]);
+    				
+    					//Booking 클래스만이라면 조회결과가 없을 때 빈값
+    					//List<Booking>처럼 리스트 형식이라면 res[0] == "undefined"
+    					if(res == ""){
+    						alert("조회 결과가 없습니다.");
+    						return;
+    					}
+    					
+    					//굳이 else문 없이 표현가능
+    					//위에서 return으로 끝내주기 때문이다.
+    					
+    					//List<Booking>인 경우에 res[0]으로!
+   						//console.log('res[0].id >> ', res[0].id);
+       					//console.log('res[0].name >> ', res[0].name);
+       					console.log('res.id', res.id);
+       					console.log('res.name', res.name);
+       					
+       					//let name = res[0].name;
+       					//let date = res[0].date;
+       					//let day = res[0].day;
+       					//let headcount = res[0].headcount;
+       					//let state = res[0].state;
+       					
+       					let name = res.name;
+       					let date = res.date;
+       					let day = res.day;
+       					let headcount = res.headcount;
+       					let state = res.state;
+       					
+   						alert('이름: '+name+
+   	    						  '\n날짜: '+date+
+   	    						  '\n일수: '+day+
+   	    						  '\n인원: '+headcount+
+   	    						  '\n상태: '+state);*/
+    				}, //success end
     				error:function(err){
     					alert('조회 error');
-    				}
-    			})
-    		})
-    	})
+    				}//error end
+    			}) //ajax end
+    		}) //DivBtn end
+    	}) // jquery end
     
     
     

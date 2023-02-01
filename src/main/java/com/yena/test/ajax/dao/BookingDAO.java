@@ -25,7 +25,7 @@ public interface BookingDAO {
 	public int deleteById(@Param("id") int id);
 	
 	//main창에서 예약정보 조회
-	public List<Booking> checkByNameNumber(
+	public Booking checkByNameNumber(
 			@Param("name") String name
 			,@Param("phoneNumber") String phoneNumber);
 	
