@@ -94,15 +94,23 @@ public class BookingController {
 	//select * from `booking` where name = #{name} AND phoneNumber = #{phoneNumber} LIMIT 1
 	@ResponseBody
 	@PostMapping("/reservatoinCheck")
-	public Booking checkByNameNumber(
+	public Map<String, Object> checkByNameNumber(
 			@RequestParam("name") String name
-			,@RequestParam("phoneNumber") String phoneNumber
-			,Model model){
+			,@RequestParam("phoneNumber") String phoneNumber){
+		
+		Map<String, Object> result = new HashMap<>();
 		
 		Booking info = bookingBO.checkByNameNumber(name, phoneNumber);
 		
-		
-		return info;
+		if(info != null) {
+			result.put("result", true);
+			result.put("info", info);
+		}else {
+			result.put("result", false);
+			result.put("info", null);
+		}
+
+		return result;
 	}
 	
 	

@@ -90,6 +90,28 @@
     				},
     				success:function(res){
     					console.log('res 확인 >> ', res);
+    					console.log('res.result 확인 >> ', res.result);
+    					console.log('res.info 확인 >> ', res.info);
+    					//console.log('res.info.name >> ', res.info.name);
+    					
+   					if(!res.result){
+    						alert("조회 결과가 없습니다.");
+    						return;
+    					}
+    					
+    					let name = res.info.name;
+       					let date = res.info.date;
+       					let day = res.info.day;
+       					let headcount = res.info.headcount;
+       					let state = res.info.state;
+       					
+   						alert('이름: '+name+
+   	    						  '\n날짜: '+date+
+   	    						  '\n일수: '+day+
+   	    						  '\n인원: '+headcount+
+   	    						  '\n상태: '+state);
+    					
+    					/*console.log('res 확인 >> ', res);
     					//console.log('res[0] 확인 >> ', res[0]);
     				
     					//Booking 클래스만이라면 조회결과가 없을 때 빈값
@@ -108,11 +130,11 @@
        					console.log('res.id', res.id);
        					console.log('res.name', res.name);
        					
-       					/*let name = res[0].name;
-       					let date = res[0].date;
-       					let day = res[0].day;
-       					let headcount = res[0].headcount;
-       					let state = res[0].state;*/
+       					//let name = res[0].name;
+       					//let date = res[0].date;
+       					//let day = res[0].day;
+       					//let headcount = res[0].headcount;
+       					//let state = res[0].state;
        					
        					let name = res.name;
        					let date = res.date;
@@ -124,7 +146,7 @@
    	    						  '\n날짜: '+date+
    	    						  '\n일수: '+day+
    	    						  '\n인원: '+headcount+
-   	    						  '\n상태: '+state);
+   	    						  '\n상태: '+state);*/
     				}, //success end
     				error:function(err){
     					alert('조회 error');
